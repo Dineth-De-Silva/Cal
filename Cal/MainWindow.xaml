@@ -4,13 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Name="CalWindow" Title="Cal" FontFamily="Roboto" MinHeight="450" MinWidth="325" Height="450" Width="325">
+        Name="CalWindow" Title="Cal" FontFamily="Roboto" Height="450" Width="325" ResizeMode="CanMinimize">
     <Grid Margin="5">
         <Grid Height="100" VerticalAlignment="Top">
-            <Label Name="MemoryAvailable" Content="M" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <Label Name="Past" Content="123123123.12" FontSize="20" FlowDirection="RightToLeft" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Label Name="MemoryAvailable" Content="M" FontFamily="Comic Sans MS" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Name="Past" Text="123123123.12" FontSize="15" FlowDirection="RightToLeft" BorderThickness="0" Margin="30,0,0,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalScrollBarVisibility="Auto"/>
             <Label Name="Operator" Content="+" FontSize="30" Margin="0,30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox Name="Now" Text="123123123123.12" FontSize="30" FlowDirection="RightToLeft" BorderThickness="0" Margin="30,35,0,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalScrollBarVisibility="Visible"/>
+            <TextBox Name="Now" Text="123123123123.12" FontSize="30" FlowDirection="RightToLeft" BorderThickness="0" Margin="30,35,0,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalScrollBarVisibility="Auto"/>
         </Grid>
         <!--Controls Row 1-->
         <Grid Name="MRC" Height="60" Width="60" Margin="0,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
