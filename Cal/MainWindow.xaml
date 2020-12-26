@@ -6,111 +6,111 @@
         mc:Ignorable="d"
         Name="CalWindow" Title="Cal" FontFamily="Roboto" Height="450" Width="325" ResizeMode="CanMinimize">
     <Grid Margin="5">
-        <Grid Height="100" VerticalAlignment="Top">
+        <Grid Name="NoHover" Height="100" VerticalAlignment="Top" MouseMove="NoHover_MouseMove">
             <Label Name="MemoryAvailable" Content="M" FontFamily="Comic Sans MS" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox Name="Past" Text="123123123.12" FontSize="15" FlowDirection="RightToLeft" BorderThickness="0" Margin="30,0,0,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalScrollBarVisibility="Auto"/>
             <Label Name="Operator" Content="+" FontSize="30" Margin="0,30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox Name="Now" Text="123123123123.12" FontSize="30" FlowDirection="RightToLeft" BorderThickness="0" Margin="30,35,0,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalScrollBarVisibility="Auto"/>
         </Grid>
         <!--Controls Row 1-->
-        <Grid Name="MRC" Height="60" Width="60" Margin="0,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="MRC" Height="60" Width="60" Margin="0,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="MRC_MouseMove">
             <Border Name="MRCb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2" CornerRadius="50,50,50,50" ></Border>
             <TextBlock Name="MRCt" Text="MRC" FontSize="25" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="M_M" Height="60" Width="60" Margin="60,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="M_M" Height="60" Width="60" Margin="60,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="M_M_MouseMove">
             <Border Name="M_Mb" CornerRadius="50,50,50,50" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="M_Mt" Text="M-" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="M_P" Height="60" Width="60" Margin="120,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="M_P" Height="60" Width="60" Margin="120,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="M_P_MouseMove">
             <Border Name="M_Pb" CornerRadius="50,50,50,50" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="M_Pt" Text="M+" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="P_M" Height="60" Width="60" Margin="180,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="P_M" Height="60" Width="60" Margin="180,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="P_M_MouseMove">
             <Border Name="P_Mb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="P_Mt" Text="+/_" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="CE" Height="60" Width="60" Margin="240,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="CE" Height="60" Width="60" Margin="240,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="CE_MouseMove">
             <Border Name="CEb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
-            <TextBlock Name="CEt" Text="CE" FontSize="30" Foreground="#FFDD5145" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Name="CEt" Text="CE" FontSize="30" Foreground="#FFDC4B3E" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <!--Controls Row 2-->
-        <Grid Name="n7" Height="60" Width="60" Margin="0,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n7" Height="60" Width="60" Margin="0,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n7_MouseMove">
             <Border Name="n7b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n7t" Text="7" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="n8" Height="60" Width="60" Margin="60,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n8" Height="60" Width="60" Margin="60,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n8_MouseMove">
             <Border Name="n8b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n8t" Text="8" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="n9" Height="60" Width="60" Margin="120,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n9" Height="60" Width="60" Margin="120,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n9_MouseMove">
             <Border Name="n9b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n9t" Text="9" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="Percentage" Height="60" Width="60" Margin="180,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="Percentage" Height="60" Width="60" Margin="180,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="Percentage_MouseMove">
             <Border Name="Percentageb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="Percentaget" Text="%" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="Backspace" Height="60" Width="60" Margin="240,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="Backspace" Height="60" Width="60" Margin="240,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="Backspace_MouseMove">
             <Border Name="Backspaceb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="Backspacet" Text="→" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <!--Controls Row 3-->
-        <Grid Name="n4" Height="60" Width="60" Margin="0,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n4" Height="60" Width="60" Margin="0,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n4_MouseMove">
             <Border Name="n4b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n4t" Text="4" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="n5" Height="60" Width="60" Margin="60,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n5" Height="60" Width="60" Margin="60,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n5_MouseMove">
             <Border Name="n5b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n5t" Text="5" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="n6" Height="60" Width="60" Margin="120,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n6" Height="60" Width="60" Margin="120,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n6_MouseMove">
             <Border Name="n6b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n6t" Text="6" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="Multiply" Height="60" Width="60" Margin="180,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="Multiply" Height="60" Width="60" Margin="180,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="Multiply_MouseMove">
             <Border Name="Multiplyb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="Multiplyt" Text="×" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="Divide" Margin="240,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="60">
+        <Grid Name="Divide" Height="60" Width="60" Margin="240,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="Divide_MouseMove">
             <Border Name="Divideb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="Dividet" Text="÷" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <!--Controls Row 4-->
-        <Grid Name="n1" Height="60" Width="60" Margin="0,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n1" Height="60" Width="60" Margin="0,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n1_MouseMove">
             <Border Name="n1b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n1t" Text="1" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="n2" Height="60" Width="60" Margin="60,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n2" Height="60" Width="60" Margin="60,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n2_MouseMove">
             <Border Name="n2b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n2t" Text="2" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="n3" Height="60" Width="60" Margin="120,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n3" Height="60" Width="60" Margin="120,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n3_MouseMove">
             <Border Name="n3b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n3t" Text="3" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="Substract" Height="60" Width="60" Margin="240,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="Substract" Height="60" Width="60" Margin="240,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="Substract_MouseMove">
             <Border Name="Substractb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="Substractt" Text="–" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <!---->
-        <Grid Name="Add" Height="120" Width="60" Margin="180,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="Add" Height="120" Width="60" Margin="180,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="Add_MouseMove">
             <Border Name="Addb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="Addt" Text="+" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <!--Controls Row 5-->
-        <Grid Name="n0" Height="60" Width="60" Margin="0,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n0" Height="60" Width="60" Margin="0,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n0_MouseMove">
             <Border Name="n0b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n0t" Text="0" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="n00" Height="60" Width="60" Margin="60,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="n00" Height="60" Width="60" Margin="60,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n00_MouseMove">
             <Border Name="n00b" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="n00t" Text="00" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="ndot" Margin="120,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="60">
+        <Grid Name="ndot" Height="60" Width="60" Margin="120,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="ndot_MouseMove">
             <Border Name="ndotb" Background="#FFF0F0F0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="ndott" Text="•" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="Equal" Height="60" Width="60" Margin="240,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid Name="Equal" Height="60" Width="60" Margin="240,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="Equal_MouseMove">
             <Border Name="Equalb" Background="#FF8ABAE0" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="Equalt" Text="=" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
