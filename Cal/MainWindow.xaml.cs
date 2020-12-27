@@ -938,7 +938,15 @@ namespace Cal
 
         private void Backspace_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            string TextAfterBackspace = Now.Text.Substring(0, Now.Text.Length - 1);
+            if (TextAfterBackspace.Equals(""))
+            {
+                Now.Text = "0";
+            }
+            else
+            {
+                Now.Text = TextAfterBackspace;
+            }
         }
 
         private void n4_MouseDown(object sender, MouseButtonEventArgs e)
