@@ -36,7 +36,7 @@ namespace Cal
                 {
                     Now.Text = "";
                 }
-                Now.Text += Item;
+                Now.Text = Convert.ToDecimal(Now.Text += Item).ToString();
             }
         }
 

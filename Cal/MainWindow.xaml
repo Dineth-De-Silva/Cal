@@ -7,9 +7,9 @@
         Name="CalWindow" Title="Cal" FontFamily="Roboto" Height="450" Width="325" ResizeMode="CanMinimize">
     <Grid Margin="5">
         <Grid Name="NoHover" Height="100" VerticalAlignment="Top" MouseMove="NoHover_MouseMove">
-            <Label Name="MemoryAvailable" Content="M" FontFamily="Comic Sans MS" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox Name="Past" Text="123123123.12" FontSize="15" TextAlignment="Right" BorderThickness="0" Margin="30,0,0,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalScrollBarVisibility="Auto"/>
-            <Label Name="Operator" Content="+" FontSize="30" Margin="0,30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Name="MemoryAvailable" FontFamily="Comic Sans MS" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox Name="Past" FontSize="15" TextAlignment="Right" BorderThickness="0" Margin="30,0,0,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalScrollBarVisibility="Auto"/>
+            <Label Name="Operator" FontSize="30" Margin="0,30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox Name="Now" Text="0" FontSize="30" TextAlignment="Right" BorderThickness="0" Margin="30,35,0,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalScrollBarVisibility="Auto"/>
         </Grid>
         <!--Controls Row 1-->
