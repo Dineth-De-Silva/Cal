@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -36,7 +37,16 @@ namespace Cal
                 {
                     Now.Text = "";
                 }
-                Now.Text = Convert.ToDecimal(Now.Text += Item).ToString();
+                decimal Try;
+                bool ok = decimal.TryParse(Now.Text + Item, out Try);
+                if (ok)
+                {
+                    Now.Text = Try.ToString();
+                }
+                else
+                {
+                    SystemSounds.Exclamation.Play();
+                }
             }
         }
 
