@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -908,7 +909,8 @@ namespace Cal
 
         private void P_M_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            decimal AfterConverted = Convert.ToDecimal(Now.Text) * (-1);
+            Now.Text = AfterConverted.ToString();
         }
 
         private void CE_MouseDown(object sender, MouseButtonEventArgs e)
