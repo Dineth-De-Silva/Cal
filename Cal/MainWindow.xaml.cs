@@ -10,15 +10,36 @@ namespace Cal
     public partial class MainWindow : Window
     {
         private static SolidColorBrush Blue = new SolidColorBrush(Colors.DeepSkyBlue);
-        private static SolidColorBrush LightBlue = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF8ABAE0"));
+        private static SolidColorBrush LightBlue = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF59B5FF"));
         private static SolidColorBrush DarkGray = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDEDEDE"));
         private static SolidColorBrush LightGray = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF0F0F0"));
-        private static SolidColorBrush Red = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDC4B3E"));
+        private static SolidColorBrush Red = new SolidColorBrush(Colors.Red);
         private static SolidColorBrush Black = new SolidColorBrush(Colors.Black);
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private void EnterNumber(string Item)
+        {
+            if (Item.Equals("."))
+            {
+                if (!Now.Text.Contains("."))
+                {
+                    Now.Text += Item;
+                }
+            }
+            else
+            {
+                if (Now.Text.Equals("0"))
+                {
+                    Now.Text = "";
+                }
+                Now.Text += Item;
+            }
+        }
+
+        //Start Mouse Hover
 
         private void MRC_MouseMove(object sender, MouseEventArgs e)
         {
@@ -869,5 +890,127 @@ namespace Cal
             ndotb.Background = LightGray;
             Equalb.Background = LightBlue;
         }
+
+        private void MRC_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void M_M_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void M_P_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void P_M_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void CE_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void n7_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("7");
+        }
+
+        private void n8_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("8");
+        }
+
+        private void n9_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("9");
+        }
+
+        private void Percentage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Backspace_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void n4_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("4");
+        }
+
+        private void n5_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("5");
+        }
+
+        private void n6_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("6");
+        }
+
+        private void Multiply_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Divide_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void n1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("1");
+        }
+
+        private void n2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("2");
+        }
+
+        private void n3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("3");
+        }
+
+        private void Substract_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Add_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void n0_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("0");
+        }
+
+        private void n00_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber("00");
+        }
+
+        private void ndot_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            EnterNumber(".");
+        }
+
+        private void Equal_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        //End Mouse Hover
     }
 }
