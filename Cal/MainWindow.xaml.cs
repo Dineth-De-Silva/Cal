@@ -17,6 +17,7 @@ namespace Cal
         private static SolidColorBrush LightGray = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF0F0F0"));
         private static SolidColorBrush Red = new SolidColorBrush(Colors.Red);
         private static SolidColorBrush Black = new SolidColorBrush(Colors.Black);
+        private static bool OpP = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,10 +39,86 @@ namespace Cal
                     Now.Text = "";
                 }
                 decimal Try;
-                bool ok = decimal.TryParse(Now.Text + Item, out Try);
-                if (ok)
+                bool Ok = decimal.TryParse(Now.Text + Item, out Try);
+                if (Ok)
                 {
                     Now.Text = Try.ToString();
+                }
+                else
+                {
+                    SystemSounds.Exclamation.Play();
+                }
+            }
+        }
+
+        private void DoFirst(string op)
+        {
+            OpP = true;
+            if (Operator.Content.Equals(" "))
+            {
+                Past.Text = Now.Text;
+                Now.Text = "0";
+            }
+            else
+            {
+                decimal PastV;
+                decimal NowV;
+                bool Ok = decimal.TryParse(Past.Text, out PastV);
+                bool Ok2 = decimal.TryParse(Now.Text, out NowV);
+                if (Ok && Ok2)
+                {
+                    decimal Value;
+                    switch (Operator.Content)
+                    {
+                        case "+":
+                            try
+                            {
+                                Value = Convert.ToDecimal(PastV + NowV);
+                                Past.Text = Value.ToString();
+                                Now.Text = "0";
+                            }
+                            catch (OverflowException)
+                            {
+                                SystemSounds.Exclamation.Play();
+                            }
+                            break;
+                        case "–":
+                            try
+                            {
+                                Value = Convert.ToDecimal(PastV - NowV);
+                                Past.Text = Value.ToString();
+                                Now.Text = "0";
+                            }
+                            catch (OverflowException)
+                            {
+                                SystemSounds.Exclamation.Play();
+                            }
+                            break;
+                        case "×":
+                            try
+                            {
+                                Value = Convert.ToDecimal(PastV * NowV);
+                                Past.Text = Value.ToString();
+                                Now.Text = "0";
+                            }
+                            catch (OverflowException)
+                            {
+                                SystemSounds.Exclamation.Play();
+                            }
+                            break;
+                        case "÷":
+                            try
+                            {
+                                Value = Convert.ToDecimal(PastV / NowV);
+                                Past.Text = Value.ToString();
+                                Now.Text = "0";
+                            }
+                            catch (OverflowException)
+                            {
+                                SystemSounds.Exclamation.Play();
+                            }
+                            break;
+                    }
                 }
                 else
                 {
@@ -930,16 +1007,19 @@ namespace Cal
 
         private void n7_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("7");
         }
 
         private void n8_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("8");
         }
 
         private void n9_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("9");
         }
 
@@ -963,66 +1043,91 @@ namespace Cal
 
         private void n4_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("4");
         }
 
         private void n5_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("5");
         }
 
         private void n6_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("6");
         }
 
         private void Multiply_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (!OpP)
+            {
+                DoFirst("×");
+            }
+            Operator.Content = "×";
         }
 
         private void Divide_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (!OpP)
+            {
+                DoFirst("÷");
+            }
+            Operator.Content = "÷";
         }
 
         private void n1_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("1");
         }
 
         private void n2_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("2");
         }
 
         private void n3_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("3");
         }
 
         private void Substract_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (!OpP)
+            {
+                DoFirst("–");
+            }
+            Operator.Content = "–";
         }
 
         private void Add_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (!OpP)
+            {
+                DoFirst("+");
+            }
+            Operator.Content = "+";
         }
 
         private void n0_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("0");
         }
 
         private void n00_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber("00");
         }
 
         private void ndot_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            OpP = false;
             EnterNumber(".");
         }
 
