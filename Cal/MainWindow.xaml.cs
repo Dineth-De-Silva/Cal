@@ -1035,6 +1035,8 @@ namespace Cal
             Equalb.Background = LightBlue;
         }
 
+        //End Mouse Hover
+
         private void MRC_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Opactive = false;
@@ -1137,6 +1139,43 @@ namespace Cal
         {
             Opactive = false;
             DoBeforeFirst();
+            if(!Operator.Content.Equals(" ") && !Operator.Content.Equals("="))
+            {
+                decimal Value;
+                switch (Operator.Content)
+                {
+                    case "+":
+                        try
+                        {
+                            Value = (Convert.ToDecimal(Now.Text) / 100) * Convert.ToDecimal(Past.Text);
+                            Now.Text = Value.ToString();
+                        }
+                        catch (OverflowException)
+                        {
+                            SystemSounds.Exclamation.Play();
+                        }
+                        break;
+                    case "–":
+                        goto case "+";
+                    case "×":
+                        try
+                        {
+                            Value = Convert.ToDecimal(Now.Text) / 100;
+                            Now.Text = Value.ToString();
+                        }
+                        catch (OverflowException)
+                        {
+                            SystemSounds.Exclamation.Play();
+                        }
+                        break;
+                    case "÷":
+                        goto case "×";
+                }
+            }
+            else
+            {
+                Now.Text = "0";
+            }
         }
 
         private void Backspace_MouseDown(object sender, MouseButtonEventArgs e)
@@ -1347,6 +1386,5 @@ namespace Cal
             MemoryDataFile.Close();
         }
 
-        //End Mouse Hover
     }
 }
