@@ -17,7 +17,10 @@ namespace Cal
         private static SolidColorBrush LightGray = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF0F0F0"));
         private static SolidColorBrush Red = new SolidColorBrush(Colors.Red);
         private static SolidColorBrush Black = new SolidColorBrush(Colors.Black);
-        private static bool OpP = false;
+        private static bool Opactive = false;
+        private static string LastOp;
+        private static decimal LastIncrement;
+        private static bool Eqactive = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -51,78 +54,104 @@ namespace Cal
             }
         }
 
-        private void DoFirst(string op)
+        private void DoBeforeFirst()
         {
-            OpP = true;
-            if (Operator.Content.Equals(" "))
+            Eqactive = false;
+        }
+
+        private void DoFirst()
+        {
+            if (Operator.Content.Equals("="))
             {
-                Past.Text = Now.Text;
-                Now.Text = "0";
+                Operator.Content = " ";
             }
-            else
+            if (!Operator.Content.Equals("="))
             {
-                decimal PastV;
-                decimal NowV;
-                bool Ok = decimal.TryParse(Past.Text, out PastV);
-                bool Ok2 = decimal.TryParse(Now.Text, out NowV);
-                if (Ok && Ok2)
+                if (Operator.Content.Equals(" "))
                 {
-                    decimal Value;
-                    switch (Operator.Content)
-                    {
-                        case "+":
-                            try
-                            {
-                                Value = Convert.ToDecimal(PastV + NowV);
-                                Past.Text = Value.ToString();
-                                Now.Text = "0";
-                            }
-                            catch (OverflowException)
-                            {
-                                SystemSounds.Exclamation.Play();
-                            }
-                            break;
-                        case "–":
-                            try
-                            {
-                                Value = Convert.ToDecimal(PastV - NowV);
-                                Past.Text = Value.ToString();
-                                Now.Text = "0";
-                            }
-                            catch (OverflowException)
-                            {
-                                SystemSounds.Exclamation.Play();
-                            }
-                            break;
-                        case "×":
-                            try
-                            {
-                                Value = Convert.ToDecimal(PastV * NowV);
-                                Past.Text = Value.ToString();
-                                Now.Text = "0";
-                            }
-                            catch (OverflowException)
-                            {
-                                SystemSounds.Exclamation.Play();
-                            }
-                            break;
-                        case "÷":
-                            try
-                            {
-                                Value = Convert.ToDecimal(PastV / NowV);
-                                Past.Text = Value.ToString();
-                                Now.Text = "0";
-                            }
-                            catch (OverflowException)
-                            {
-                                SystemSounds.Exclamation.Play();
-                            }
-                            break;
-                    }
+                    Past.Text = Now.Text;
+                    Now.Text = "0";
                 }
                 else
                 {
-                    SystemSounds.Exclamation.Play();
+                    string PastS;
+                    if (Past.Text.Equals(""))
+                    {
+                        PastS = "0";
+                    }
+                    else
+                    {
+                        PastS = Past.Text;
+                    }
+                    decimal PastV;
+                    decimal NowV;
+                    bool Ok = decimal.TryParse(PastS, out PastV);
+                    bool Ok2 = decimal.TryParse(Now.Text, out NowV);
+                    if (Ok && Ok2)
+                    {
+                        decimal Value;
+                        switch (Operator.Content)
+                        {
+                            case "+":
+                                try
+                                {
+                                    Value = Convert.ToDecimal(PastV + NowV);
+                                    Past.Text = Value.ToString();
+                                    Now.Text = "0";
+                                }
+                                catch (OverflowException)
+                                {
+                                    SystemSounds.Exclamation.Play();
+                                }
+                                break;
+                            case "–":
+                                try
+                                {
+                                    Value = Convert.ToDecimal(PastV - NowV);
+                                    Past.Text = Value.ToString();
+                                    Now.Text = "0";
+                                }
+                                catch (OverflowException)
+                                {
+                                    SystemSounds.Exclamation.Play();
+                                }
+                                break;
+                            case "×":
+                                try
+                                {
+                                    Value = Convert.ToDecimal(PastV * NowV);
+                                    Past.Text = Value.ToString();
+                                    Now.Text = "0";
+                                }
+                                catch (OverflowException)
+                                {
+                                    SystemSounds.Exclamation.Play();
+                                }
+                                break;
+                            case "÷":
+                                try
+                                {
+                                    Value = Convert.ToDecimal(PastV / NowV);
+                                    Past.Text = Value.ToString();
+                                    Now.Text = "0";
+                                }
+                                catch (DivideByZeroException)
+                                {
+                                    Value = 0;
+                                    Past.Text = Value.ToString();
+                                    Now.Text = "0";
+                                }
+                                catch (OverflowException)
+                                {
+                                    SystemSounds.Exclamation.Play();
+                                }
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        SystemSounds.Exclamation.Play();
+                    }
                 }
             }
         }
@@ -981,55 +1010,67 @@ namespace Cal
 
         private void MRC_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            Opactive = false;
+            DoBeforeFirst();
         }
 
         private void M_M_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            Opactive = false;
+            DoBeforeFirst();
         }
 
         private void M_P_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            Opactive = false;
+            DoBeforeFirst();
         }
 
         private void P_M_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            Opactive = false;
+            DoBeforeFirst();
             decimal AfterConverted = Convert.ToDecimal(Now.Text) * (-1);
             Now.Text = AfterConverted.ToString();
         }
 
         private void CE_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            Opactive = false;
+            DoBeforeFirst();
         }
 
         private void n7_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("7");
         }
 
         private void n8_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("8");
         }
 
         private void n9_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("9");
         }
 
         private void Percentage_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            Opactive = false;
+            DoBeforeFirst();
         }
 
         private void Backspace_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            Opactive = false;
+            DoBeforeFirst();
             string TextAfterBackspace = Now.Text.Substring(0, Now.Text.Length - 1);
             if (TextAfterBackspace.Equals(""))
             {
@@ -1043,97 +1084,187 @@ namespace Cal
 
         private void n4_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("4");
         }
 
         private void n5_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("5");
         }
 
         private void n6_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("6");
         }
 
         private void Multiply_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (!OpP)
+            DoBeforeFirst();
+            if (!Opactive)
             {
-                DoFirst("×");
+                DoFirst();
+                Opactive = true;
             }
             Operator.Content = "×";
         }
 
         private void Divide_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (!OpP)
+            DoBeforeFirst();
+            if (!Opactive)
             {
-                DoFirst("÷");
+                DoFirst();
+                Opactive = true;
             }
             Operator.Content = "÷";
         }
 
         private void n1_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("1");
         }
 
         private void n2_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("2");
         }
 
         private void n3_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("3");
         }
 
         private void Substract_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (!OpP)
+            DoBeforeFirst();
+            if (!Opactive)
             {
-                DoFirst("–");
+                DoFirst();
+                Opactive = true;
             }
             Operator.Content = "–";
         }
 
         private void Add_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (!OpP)
+            DoBeforeFirst();
+            if (!Opactive)
             {
-                DoFirst("+");
+                DoFirst();
+                Opactive = true;
             }
             Operator.Content = "+";
         }
 
         private void n0_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("0");
         }
 
         private void n00_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber("00");
         }
 
         private void ndot_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpP = false;
+            DoBeforeFirst();
+            Opactive = false;
             EnterNumber(".");
         }
 
         private void Equal_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            Opactive = false;
+            if (Eqactive)
+            {
+                decimal Value;
+                switch (LastOp)
+                {
+                    case "+":
+                        try
+                        {
+                            Value = Convert.ToDecimal(Convert.ToDecimal(Now.Text) + LastIncrement);
+                            Now.Text = Value.ToString();
+                        }
+                        catch (OverflowException)
+                        {
+                            SystemSounds.Exclamation.Play();
+                        }
+                        break;
+                    case "–":
+                        try
+                        {
+                            Value = Convert.ToDecimal(Convert.ToDecimal(Now.Text) - LastIncrement);
+                            Now.Text = Value.ToString();
+                        }
+                        catch (OverflowException)
+                        {
+                            SystemSounds.Exclamation.Play();
+                        }
+                        break;
+                    case "×":
+                        try
+                        {
+                            Value = Convert.ToDecimal(Convert.ToDecimal(Now.Text) * LastIncrement);
+                            Now.Text = Value.ToString();
+                        }
+                        catch (OverflowException)
+                        {
+                            SystemSounds.Exclamation.Play();
+                        }
+                        break;
+                    case "÷":
+                        try
+                        {
+                            Value = Convert.ToDecimal(Convert.ToDecimal(Now.Text) / LastIncrement);
+                            Now.Text = Value.ToString();
+                        }
+                        catch (DivideByZeroException)
+                        {
+                            Value = 0;
+                            Now.Text = Value.ToString();
+                        }
+                        catch (OverflowException)
+                        {
+                            SystemSounds.Exclamation.Play();
+                        }
+                        break;
+                }
+                ;
+            }
+            else
+            {
+                if (!Operator.Content.Equals(" ") && !Operator.Content.Equals("="))
+                {
+                    LastOp = Operator.Content.ToString();
+                    LastIncrement = Convert.ToDecimal(Now.Text.ToString());
+                }
+                DoFirst();
+                if (!Operator.Content.Equals("="))
+                {
+                    Operator.Content = "=";
+                    Now.Text = Past.Text;
+                    Past.Text = "";
+                }
+            }
+            Eqactive = true;
         }
 
         //End Mouse Hover
