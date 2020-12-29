@@ -1038,6 +1038,9 @@ namespace Cal
         {
             Opactive = false;
             DoBeforeFirst();
+            Operator.Content = " ";
+            Now.Text = "0";
+            Past.Text = "";
         }
 
         private void n7_MouseDown(object sender, MouseButtonEventArgs e)
