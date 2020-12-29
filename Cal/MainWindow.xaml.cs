@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Media;
 using System.Windows;
 using System.Windows.Input;
@@ -21,9 +22,34 @@ namespace Cal
         private static string LastOp;
         private static decimal LastIncrement;
         private static bool Eqactive = false;
+        private static decimal Memory;
+        private static bool MRCActive = false;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void CalWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists("Memory.txt"))
+            {
+                StreamReader MemoryDataFile = new StreamReader("Memory.txt");
+                Memory = Convert.ToDecimal(MemoryDataFile.ReadLine());
+                MemoryDataFile.Close();
+                if (Memory != 0)
+                {
+                    MemoryAvailable.Content = "M";
+                }
+                else
+                {
+                    MemoryAvailable.Content = " ";
+                }
+            }
+            else
+            {
+                Memory = 0;
+                MemoryAvailable.Content = " ";
+            }
         }
 
         private void EnterNumber(string Item)
@@ -57,6 +83,7 @@ namespace Cal
         private void DoBeforeFirst()
         {
             Eqactive = false;
+            MRCActive = false;
         }
 
         private void DoFirst()
@@ -1011,19 +1038,61 @@ namespace Cal
         private void MRC_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Opactive = false;
-            DoBeforeFirst();
+            Eqactive = false;
+            if (MRCActive)
+            {
+                Memory = 0;
+                MemoryAvailable.Content = " ";
+            }
+            else
+            {
+                Now.Text = Memory.ToString();
+                MRCActive = true;
+            }
         }
 
         private void M_M_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Opactive = false;
-            DoBeforeFirst();
+            try
+            {
+                Memory -= Convert.ToDecimal(Now.Text);
+                Opactive = false;
+                DoBeforeFirst();
+                if (Memory != 0)
+                {
+                    MemoryAvailable.Content = "M";
+                }
+                else
+                {
+                    MemoryAvailable.Content = " ";
+                }
+            }
+            catch (OverflowException)
+            {
+                SystemSounds.Exclamation.Play();
+            }
         }
 
         private void M_P_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Opactive = false;
-            DoBeforeFirst();
+            try
+            {              
+                Memory += Convert.ToDecimal(Now.Text);
+                Opactive = false;
+                DoBeforeFirst();
+                if (Memory != 0)
+                {
+                    MemoryAvailable.Content = "M";
+                }
+                else
+                {
+                    MemoryAvailable.Content = " ";
+                }
+            }
+            catch (OverflowException)
+            {
+                SystemSounds.Exclamation.Play();
+            }
         }
 
         private void P_M_MouseDown(object sender, MouseButtonEventArgs e)
@@ -1195,6 +1264,7 @@ namespace Cal
         private void Equal_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Opactive = false;
+            MRCActive = false;
             if (Eqactive)
             {
                 decimal Value;
@@ -1268,6 +1338,13 @@ namespace Cal
                 }
             }
             Eqactive = true;
+        }
+
+        private void CalWindow_Closed(object sender, EventArgs e)
+        {
+            StreamWriter MemoryDataFile = new StreamWriter("Memory.txt");
+            MemoryDataFile.Write(Memory);
+            MemoryDataFile.Close();
         }
 
         //End Mouse Hover
