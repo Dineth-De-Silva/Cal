@@ -4,7 +4,7 @@ Simple calculator
 <br/>
 ![Screenshot1](Screenshots/Screenshot1.PNG)
 - This standard calculator is made up with C#.net and WPF framework.
-- This has two versions, one supporting .net framework 4.8 and another supporting .net framework 4
+- This is fully supported on .Net Framework 4.8 or newer version
 - This has custermized buttons and some other controlers instead of standard wpf controlers to get a new look.
 - This is standard and **does not use BODMAS rule at all**.
 - In this calculator you can use numbers *from ±1.0 x 10-28 to ±7.9228 x 1028* for any operation.
