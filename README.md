@@ -9,6 +9,7 @@ Simple calculator
 - This is standard and **does not use BODMAS rule at all**.
 - In this calculator you can use numbers *from ±1.0 x 10-28 to ±7.9228 x 1028* for any operation.
 - If you try to use a number out of the range the calculator will output an error sound.
+- If an error occured on permissions try to run the cal again by giving administrative permissions
 ## All tasks that Cal can done
 1. Simple operations
 > - Addition
