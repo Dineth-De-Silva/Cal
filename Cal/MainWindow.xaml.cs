@@ -36,10 +36,9 @@ namespace Cal
     public partial class MainWindow : Window
     {
         private static SolidColorBrush Blue = new SolidColorBrush(Colors.DeepSkyBlue);
-        private static SolidColorBrush LightBlue = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF59B5FF"));
         private static SolidColorBrush DarkGray = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDEDEDE"));
         private static SolidColorBrush LightGray = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF0F0F0"));
-        private static SolidColorBrush Red = new SolidColorBrush(Colors.Red);
+        private static SolidColorBrush Red = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFEE397F"));
         private static SolidColorBrush Black = new SolidColorBrush(Colors.Black);
         private static bool Opactive = false;
         private static string LastOp;
@@ -260,7 +259,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void M_M_MouseMove(object sender, MouseEventArgs e)
@@ -294,7 +293,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void M_P_MouseMove(object sender, MouseEventArgs e)
@@ -328,7 +327,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void P_M_MouseMove(object sender, MouseEventArgs e)
@@ -362,7 +361,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void CE_MouseMove(object sender, MouseEventArgs e)
@@ -396,7 +395,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n7_MouseMove(object sender, MouseEventArgs e)
@@ -430,7 +429,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n8_MouseMove(object sender, MouseEventArgs e)
@@ -464,7 +463,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n9_MouseMove(object sender, MouseEventArgs e)
@@ -498,7 +497,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void Percentage_MouseMove(object sender, MouseEventArgs e)
@@ -532,7 +531,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void Backspace_MouseMove(object sender, MouseEventArgs e)
@@ -566,7 +565,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n4_MouseMove(object sender, MouseEventArgs e)
@@ -600,7 +599,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n5_MouseMove(object sender, MouseEventArgs e)
@@ -634,7 +633,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n6_MouseMove(object sender, MouseEventArgs e)
@@ -668,7 +667,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void Multiply_MouseMove(object sender, MouseEventArgs e)
@@ -702,7 +701,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void Divide_MouseMove(object sender, MouseEventArgs e)
@@ -736,7 +735,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n1_MouseMove(object sender, MouseEventArgs e)
@@ -770,7 +769,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n2_MouseMove(object sender, MouseEventArgs e)
@@ -804,7 +803,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n3_MouseMove(object sender, MouseEventArgs e)
@@ -838,7 +837,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void Add_MouseMove(object sender, MouseEventArgs e)
@@ -872,7 +871,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void Substract_MouseMove(object sender, MouseEventArgs e)
@@ -906,7 +905,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n0_MouseMove(object sender, MouseEventArgs e)
@@ -940,7 +939,7 @@ namespace Cal
             n0b.Background = Blue;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void n00_MouseMove(object sender, MouseEventArgs e)
@@ -974,7 +973,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = Blue;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void ndot_MouseMove(object sender, MouseEventArgs e)
@@ -1008,7 +1007,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = Blue;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         private void Equal_MouseMove(object sender, MouseEventArgs e)
@@ -1076,7 +1075,7 @@ namespace Cal
             n0b.Background = LightGray;
             n00b.Background = LightGray;
             ndotb.Background = LightGray;
-            Equalb.Background = LightBlue;
+            Equalb.Background = Blue;
         }
 
         //End Mouse Hover

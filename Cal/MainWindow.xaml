@@ -53,7 +53,7 @@ SOFTWARE.
         </Grid>
         <Grid Name="CE" Height="60" Width="60" Margin="240,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="CE_MouseMove" MouseDown="CE_MouseDown">
             <Border Name="CEb" Background="#FFDEDEDE" BorderBrush="White" BorderThickness="2"></Border>
-            <TextBlock Name="CEt" Text="CE" FontSize="30" Foreground="Red" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Name="CEt" Text="CE" FontSize="30" Foreground="#FFEE397F" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <!--Controls Row 2-->
         <Grid Name="n7" Height="60" Width="60" Margin="0,160,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="n7_MouseMove" MouseDown="n7_MouseDown">
@@ -133,7 +133,7 @@ SOFTWARE.
             <TextBlock Name="ndott" Text="." FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <Grid Name="Equal" Height="60" Width="60" Margin="240,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" MouseMove="Equal_MouseMove" MouseDown="Equal_MouseDown">
-            <Border Name="Equalb" Background="#FF59B5FF" BorderBrush="White" BorderThickness="2"></Border>
+            <Border Name="Equalb" Background="DeepSkyBlue" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="Equalt" Text="=" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <Label Content="Copyright (c) 2020 D. A. Dineth De Silva" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Bottom"/>
