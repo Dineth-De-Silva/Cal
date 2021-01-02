@@ -1080,6 +1080,13 @@ namespace Cal
         {
             try
             {
+                DoFirst();
+                if (!Operator.Content.Equals("="))
+                {
+                    Operator.Content = "=";
+                    Now.Text = Past.Text;
+                    Past.Text = "";
+                }
                 Memory -= Convert.ToDecimal(Now.Text);
                 Opactive = false;
                 DoBeforeFirst();
@@ -1101,7 +1108,14 @@ namespace Cal
         private void M_P_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
-            {              
+            {
+                DoFirst();
+                if (!Operator.Content.Equals("="))
+                {
+                    Operator.Content = "=";
+                    Now.Text = Past.Text;
+                    Past.Text = "";
+                }
                 Memory += Convert.ToDecimal(Now.Text);
                 Opactive = false;
                 DoBeforeFirst();
