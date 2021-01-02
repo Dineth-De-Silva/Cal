@@ -72,6 +72,27 @@ namespace Cal
             {
                 Memory = 0;
                 MemoryAvailable.Content = " ";
+                StreamWriter MemoryDataFile = new StreamWriter("Memory.txt");
+                MemoryDataFile.Write("0");
+                MemoryDataFile.Close();
+            }
+            if (File.Exists("Data.txt"))
+            {
+                StreamReader DataDataFile = new StreamReader("Data.txt");
+                Past.Text = DataDataFile.ReadLine();
+                Operator.Content = DataDataFile.ReadLine();
+                Now.Text = DataDataFile.ReadLine();
+                DataDataFile.Close();
+            }
+            else
+            {
+                Operator.Content = " ";
+                Now.Text = "0";
+                StreamWriter DataDataFile = new StreamWriter("Data.txt");
+                DataDataFile.WriteLine();
+                DataDataFile.WriteLine(" ");
+                DataDataFile.WriteLine("0");
+                DataDataFile.Close();
             }
         }
 
@@ -1421,6 +1442,11 @@ namespace Cal
             StreamWriter MemoryDataFile = new StreamWriter("Memory.txt");
             MemoryDataFile.Write(Memory);
             MemoryDataFile.Close();
+            StreamWriter DataDataFile = new StreamWriter("Data.txt");
+            DataDataFile.WriteLine(Past.Text);
+            DataDataFile.WriteLine(Operator.Content);
+            DataDataFile.WriteLine(Now.Text);
+            DataDataFile.Close();
         }
 
     }
