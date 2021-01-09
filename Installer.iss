@@ -24,7 +24,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Cal"
-#define MyAppVersion "1.0-beta.1"
+#define MyAppVersion "1.0"
 #define MyAppPublisher "D. A. Dineth De Silva"
 #define MyAppURL "https://dadinethdesilva.blogspot.com/"
 #define MyAppExeName "Cal.exe"
