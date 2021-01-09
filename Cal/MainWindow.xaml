@@ -136,6 +136,6 @@ SOFTWARE.
             <Border Name="Equalb" Background="DeepSkyBlue" BorderBrush="White" BorderThickness="2"></Border>
             <TextBlock Name="Equalt" Text="=" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Label Content="Copyright (c) 2020 D. A. Dineth De Silva" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Bottom"/>
+        <Label Content="Copyright (c) 2021 D. A. Dineth De Silva" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
