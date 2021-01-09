@@ -28,6 +28,7 @@ OutputBaseFilename=CalSetup-x64
 SetupIconFile=favicon.ico
 Compression=lzma
 SolidCompression=yes
+ArchitecturesInstallIn64BitMode=x64
 WizardStyle=modern
 
 [Languages]

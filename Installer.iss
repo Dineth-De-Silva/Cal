@@ -28,7 +28,7 @@ OutputBaseFilename=CalSetup
 SetupIconFile=favicon.ico
 Compression=lzma
 SolidCompression=yes
-WizardStyle=modern
+WizardStyle=classic
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
