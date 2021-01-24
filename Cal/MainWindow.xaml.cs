@@ -1240,7 +1240,7 @@ namespace Cal
             Opactive = false;
             DoBeforeFirst();
             string TextAfterBackspace = Now.Text.Substring(0, Now.Text.Length - 1);
-            if (TextAfterBackspace.Equals(""))
+            if (TextAfterBackspace.Equals("") || TextAfterBackspace.Equals("-"))
             {
                 Now.Text = "0";
             }
